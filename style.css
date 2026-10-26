@@ -1,0 +1,355 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Courier New", Courier, monospace;
+    background-color: #f5f3f7;
+    color: #2c2738;
+    line-height: 1.6;
+}
+
+.full-width-block {
+    width: 100%;
+    background-color: #ffffff;
+}
+
+header {
+    border-bottom: 1px solid rgba(154, 126, 199, 0.2);
+}
+
+.header-inner {
+    --bs-gutter-y: 0;
+}
+
+.header-brand {
+    min-width: 0;
+}
+
+/* Стили для галереи-слайдера */
+.slider-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+.slider-track-wrap {
+    overflow: hidden;
+    width: 100%;
+    margin: 0 10px;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 33.333%;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.arrow-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    flex-shrink: 0;
+}
+
+.arrow-btn:hover {
+    background: #2980b9;
+}
+
+.arrow-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.pager {
+    text-align: center;
+    margin: 15px auto 30px auto;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Адаптивность для смартфонов (экран меньше 600px) */
+@media (max-width: 600px) {
+    .slide {
+        flex: 0 0 100%;
+    }
+    .slider-container {
+        max-width: 100%;
+        padding: 0 5px;
+    }
+}
+
+
+#logo {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+#site-name {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #5d4680;
+    letter-spacing: -0.5px;
+}
+
+.menu-nav {
+    min-width: 0;
+}
+
+.nav-btn {
+    display: block;
+    padding: 9px 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #7b6699;
+    background-color: #f5f3f7;
+    border: 0;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-btn:hover,
+.nav-btn:focus-visible {
+    color: #ffffff;
+    background-color: #9a7ec7;
+}
+
+.content-container {
+    min-width: 0;
+}
+
+.content-section {
+    min-width: 0;
+    background-color: #ffffff;
+    margin: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(93, 70, 128, 0.05);
+    border: 1px solid rgba(154, 126, 199, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    color: #5d4680;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(154, 126, 199, 0.15);
+}
+
+.links-section ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.links-section li {
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;
+}
+
+.links-section li:last-child {
+    margin-bottom: 0;
+}
+
+.links-section img {
+    max-width: 100%;
+    height: auto;
+}
+
+.table-section {
+    min-width: 0;
+}
+
+.table-responsive {
+    border: 1px solid rgba(154, 126, 199, 0.2);
+    border-radius: 8px;
+}
+
+.data-table {
+    width: 100%;
+    min-width: 650px;
+    margin: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: #2c2738;
+    vertical-align: middle;
+}
+
+.data-table > :not(caption) > * > * {
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 13px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(154, 126, 199, 0.1);
+    border-right: 1px solid rgba(154, 126, 199, 0.1);
+    box-shadow: none;
+}
+
+.data-table > thead > tr > th {
+    background-color: #f1edf5;
+    color: #5d4680;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(154, 126, 199, 0.2);
+}
+
+.data-table > :not(caption) > * > *:last-child {
+    border-right: none;
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #faf9fb;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 500px;
+}
+
+form p {
+    margin: 0 0 15px;
+}
+
+label {
+    font-size: 13px;
+}
+
+.form-control,
+.form-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(154, 126, 199, 0.3);
+    border-radius: 6px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 13px;
+    background-color: #faf9fb;
+    color: #2c2738;
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #9a7ec7;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(154, 126, 199, 0.15);
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+.form-check-input {
+    border-color: rgba(154, 126, 199, 0.5);
+}
+
+.form-check-input:checked {
+    background-color: #9a7ec7;
+    border-color: #9a7ec7;
+}
+
+.form-check-input:focus {
+    border-color: #9a7ec7;
+    box-shadow: 0 0 0 3px rgba(154, 126, 199, 0.15);
+}
+
+.submit-btn {
+    padding: 10px 24px;
+    background-color: #9a7ec7;
+    border-color: #9a7ec7;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover,
+.submit-btn:focus-visible {
+    background-color: #8364b3;
+    border-color: #8364b3;
+}
+
+.submit-btn:active {
+    background-color: #7655a7 !important;
+    border-color: #7655a7 !important;
+    transform: scale(0.98);
+}
+
+footer {
+    background-color: #ffffff;
+    border-top: 1px solid rgba(154, 126, 199, 0.2);
+}
+
+.footer-inner {
+    font-size: 12px;
+    color: #7b6699;
+}
+
+.footer-inner p {
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    #site-name {
+        font-size: 20px;
+    }
+
+    .nav-btn {
+        padding: 8px 15px;
+        background-color: transparent;
+    }
+}
+
+@media (min-width: 992px) {
+    .data-table {
+        min-width: 0;
+    }
+}
